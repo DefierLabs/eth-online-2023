@@ -9,7 +9,7 @@ contract OmniToken is ERC20, Ownable {
 
     address public minter;
 
-    constructor() ERC20("OMNIPOOL Token", "Omni") {}
+    constructor(string memory name, string memory symbol) ERC20(name, symbol) {}
 
     function setMinter(address _minter) onlyOwner external {
         require( _minter != address(0), "!0");
