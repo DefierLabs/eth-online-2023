@@ -1,6 +1,6 @@
 pragma solidity >=0.8.4;
 
-import { ERC20 } from "@openzeppelin/contracts-0.8/token/ERC20/IERC20.sol";
+import { ERC20 } from "@openzeppelin/contracts-0.8/token/ERC20/ERC20.sol";
 import { Ownable } from "@openzeppelin/contracts-0.8/access/Ownable.sol";
 
 // import { console } from "hardhat/console.sol";
