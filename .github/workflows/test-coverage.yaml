@@ -1,0 +1,23 @@
+on: ["push"]
+name: Test Coverage
+jobs:
+    build:
+        if: github.event.pull_request.draft == false
+        runs-on: ubuntu-latest
+        steps:
+            - uses: actions/checkout@v3
+              with:
+                  submodules: recursive
+                  token: ${{ secrets.ACCESS_TOKEN }}
+            - uses: actions/setup-node@v3
+              with:
+                  node-version: 18
+                  cache: "yarn"
+
+            - run: yarn
+            - run: yarn compile
+            - run: yarn coverage
+            - name: Coveralls
+              uses: coverallsapp/github-action@master
+              with:
+                  github-token: ${{ secrets.GITHUB_TOKEN }}
