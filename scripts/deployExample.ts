@@ -1,5 +1,5 @@
 import { Signer } from "ethers";
-import { Example__factory } from "../types/generated";
+import { Example__factory, Example } from "../types/generated";
 import { deployContract } from "../tasks/utils";
 import { HardhatRuntimeEnvironment } from "hardhat/types";
 
